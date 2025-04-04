@@ -12,7 +12,6 @@ public class App {
     public static void main(String[] args) {
         //3..10
         //
-        boolean entrada = true;
         Scanner scaner = new Scanner(System.in);
 
 
@@ -21,7 +20,7 @@ public class App {
             System.out.print("Qual o tamanho da matriz? (3..10) ");
             teclado = scaner.nextInt();
             
-        } while (3 <= teclado && teclado <= 10);
+        } while (teclado < 3 || teclado > 10);
 
         int[][] matriz = new int[teclado][teclado];
 
@@ -30,12 +29,10 @@ public class App {
                 if (i == j) {
                     matriz[i][j] = 1;
                 }
-                System.out.println(matriz[i][j] + " ");
+                System.out.printf(matriz[i][j] + " ");
             }
             System.out.println();
         }
-
-
     }
 
 }
