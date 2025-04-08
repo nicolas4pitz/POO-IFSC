@@ -1,0 +1,14 @@
+> Task :app:compileJava UP-TO-DATE
+> Task :app:processResources NO-SOURCE
+> Task :app:classes UP-TO-DATE
+
+> Task :app:run
+ 0 OI
+ 1 OLA
+ 2 BOA NOITE
+ 3 TESTE
+ 4 NOVA
+ 5 BELE
+
+BUILD SUCCESSFUL in 635ms
+2 actionable tasks: 1 executed, 1 up-to-date
