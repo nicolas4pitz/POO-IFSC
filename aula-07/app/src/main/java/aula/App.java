@@ -3,7 +3,7 @@
  */
 package aula;
 
-import main.java.aula.Caneta;
+import main.java.aula.*;
 
 public class App {
     
@@ -13,13 +13,15 @@ public class App {
 
         bic.definirCor("Branca");
 
-        System.out.println(bic.isAberta());
+        bic.registrarTinta(100);
+        bic.obterTinta();
         bic.abrirFechar();
-        System.out.println(bic.isAberta());
-    
-        System.out.println(bic.qualCor());
-        bic.definirCor("Vermelho");
-        System.out.println(bic.qualCor());
+        bic.isAberta();
+
+        System.out.println(bic.desenhar(5));
+        System.out.println(bic.desenhar(7));
+        System.out.println(bic.desenhar(-1));
+        bic.obterTinta();
     }
 
 
