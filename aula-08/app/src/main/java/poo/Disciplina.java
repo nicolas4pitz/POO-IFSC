@@ -1,4 +1,4 @@
-package main.java.poo;
+package poo;
 
 import java.lang.reflect.Array;
 
@@ -45,13 +45,49 @@ public class Disciplina {
         return semestre;
     }
 
+    public void setSigla(String sigla){
+        this.sigla = sigla;
+    }
+    public void setProfessor(String prof){
+        this.professor = prof;
+    }
+    public void setDisciplin(String disciplin){
+        this.disciplina = disciplin;
+    }
+
+    public void setCargaTeorica(int teorica){
+        this.cargaTeorica = teorica;
+    }
+    public void setPratica(int pratica){
+        this.cargaPratica = pratica;
+    }
+    public void setSemester(int semester){
+        this.semestre = semester;
+    }
+
     public void mudarProfessor(String newProfessor){
         professor = newProfessor;
     }
 
-    
+
+    public String toString(){
+        final StringBuilder sb = new StringBuilder();
+        sb.append("Professor");
+        sb.append(this.professor + "\n");
+        sb.append("Disciplina");
+        sb.append(this.disciplina + "\n");
+        sb.append("Sigla");
+        sb.append(this.sigla + "\n");
+        sb.append("Carga Pratica");
+        sb.append(cargaPratica + "\n");
+        sb.append("Carga Teorica");
+        sb.append(cargaTeorica + "\n");
+        sb.append("Semestre");
+        sb.append(semestre + "\n");
 
 
+        return sb.toString();
+    }
 
 
 }

@@ -3,10 +3,10 @@
  */
 package poo;
 
-import main.java.poo.Batedeira;
-import main.java.poo.Contador;
-import main.java.poo.Disciplina;
-import main.java.poo.Player;
+import poo.Batedeira;
+import poo.Contador;
+import poo.Disciplina;
+import poo.Player;
 
 public class App {
     
@@ -46,6 +46,8 @@ public class App {
         Disciplina disciplina = new Disciplina("Programação Orientada a Objetos", "Emerson", 60, 2, 20, "POO");
         System.out.println(disciplina.getCargaTeorica());
         System.out.println(disciplina.getDisciplina());
+
+        disciplina.toString();
     }
 
 }
