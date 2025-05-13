@@ -51,8 +51,13 @@ public class App {
 
         agenda.forEach(System.out::println);
 
-        Pessoa p = agenda.stream().filter(element -> element.getNome().equals("Lucas")).findFirst().orElse(null);
+        Pessoa p = agenda.stream().filter(element -> element.getNome().equals("Joao")).findFirst().orElse(null);
 
-        System.out.println(p);
+        if(p != null){
+            String n = p.getNome();
+        System.out.println(n);
+        } else{
+            System.out.println("Nao encontrei");
+        }
     }
 }
