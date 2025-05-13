@@ -1,6 +1,5 @@
 package poo;
 
-import java.lang.reflect.Array;
 
 public class Disciplina {
 

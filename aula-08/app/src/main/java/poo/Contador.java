@@ -1,4 +1,4 @@
-package main.java.poo;
+package poo;
 
 public class Contador {
     private int valorAtual = 0;

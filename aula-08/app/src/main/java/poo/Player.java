@@ -1,4 +1,4 @@
-package main.java.poo;
+package poo;
 
 public class Player {
 

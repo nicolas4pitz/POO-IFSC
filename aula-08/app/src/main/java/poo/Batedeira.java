@@ -1,8 +1,5 @@
-package main.java.poo;
+package poo;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Batedeira {
 
