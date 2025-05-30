@@ -14,14 +14,17 @@ classDiagram
         - maxPeso : int
         - maxCombustivel : int
         - motores : ArrayList~Motor~
-        - Aviao()
+        + Aviao()
+        + consumoHora() void
+        + acelerar(int tempo) void
+        + ligarAviao() void
     }
 
     class Motor{
         - tipo : int
         - consumoPorHora : int
         - status : bool
-        - Motor()
-        - On/Off() void
+        + Motor()
+        + onOff() void
     }
 ```

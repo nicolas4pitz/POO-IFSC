@@ -4,11 +4,21 @@
 package aula;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+    
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        Aviao aviao = new Aviao(10, 10, 5, 5, 6);
+
+        System.out.println(aviao.acelerar(5));
+
+        aviao.ligarAviao();
+
+        aviao.viagem();
+
+        System.out.println(String.format("O consumo de combustivel nessa viagem foi de %d Litros, com %d tripulantes, %d passageiros, com um peso total de %d", aviao.acelerar(6), aviao.getTripulante(), aviao.getPassageiro(), aviao.getPeso()));
+
+    
+
     }
 }
