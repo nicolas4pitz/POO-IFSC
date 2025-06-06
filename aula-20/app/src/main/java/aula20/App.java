@@ -3,28 +3,65 @@
  */
 package aula20;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class App {
+
+    private Agenda agenda;
 
     private Scanner scan = new Scanner(System.in);
     
 
     public App(){
-
+        agenda = new Agenda();
     }
 
     public void menu(){
         tabelaOpções();
+        int teclado;
+        do{
+            teclado = scan.nextInt();
+            scan.nextLine();
+
+            switch (teclado) {
+                case 1:
+                    criarContato();
+                    break;
+                case 2:
+                    agenda.listar();
+                default:
+                    break;
+            }
+        } while (teclado != 5);
+        
     }
 
     private void tabelaOpções() {
         System.out.println("---------Menu----------");
-        System.out.println("1 - ");
+        System.out.println("1 - Criar Contato");
         System.out.println("2 - ");
         System.out.println("3 - ");
         System.out.println("4 - ");
         System.out.println("5 - ");
+    }
+
+    private boolean criarContato(){
+        System.out.println("---------Contato----------");
+        System.out.print("Nome: ");
+        String nome = scan.nextLine();
+        System.out.print("Sobrenome: ");
+        String sobrenome = scan.nextLine();
+        System.out.print("Entre com a data (dd/mm/aaaa): ");
+        String dataString = scan.nextLine();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate data = LocalDate.parse(dataString, formato);
+
+        Contato cont = new Contato(nome, sobrenome, data);
+
+        agenda.addContato(cont);
+        return true;
     }
 
     public static void main(String[] args) {
