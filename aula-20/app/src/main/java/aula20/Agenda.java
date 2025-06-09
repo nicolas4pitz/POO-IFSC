@@ -20,4 +20,18 @@ public class Agenda {
         return true;
     }
 
+    public boolean addTelefone(String rotulo, String valor, int indiceContatoNaLista){
+      boolean verificar = contatos.get(indiceContatoNaLista).addTelefone(rotulo, valor);
+      return verificar;
+    }
+
+    public Contato findContatos(String nome, String sobreNome){
+      for (Contato contato : contatos) {
+        if (contato.getNome().equals(nome) && contato.getSobrenome().equals(sobreNome)) {
+            return contato;
+        }
+    }
+      return null;
+    }
+
 }

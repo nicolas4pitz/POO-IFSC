@@ -19,9 +19,9 @@ public class App {
     }
 
     public void menu(){
-        tabelaOpções();
-        int teclado;
-        do{
+      int teclado;  
+      do{
+          tabelaOpções();
             teclado = scan.nextInt();
             scan.nextLine();
 
@@ -31,6 +31,13 @@ public class App {
                     break;
                 case 2:
                     agenda.listar();
+                    break;
+                case 3:
+                    acharContato();
+                    break;
+                case 4:
+                    adicionarTelefone();
+                    break;
                 default:
                     break;
             }
@@ -42,8 +49,8 @@ public class App {
         System.out.println("---------Menu----------");
         System.out.println("1 - Criar Contato");
         System.out.println("2 - ");
-        System.out.println("3 - ");
-        System.out.println("4 - ");
+        System.out.println("3 - Achar Contatos");
+        System.out.println("4 - Adicionar Telefone");
         System.out.println("5 - ");
     }
 
@@ -62,6 +69,31 @@ public class App {
 
         agenda.addContato(cont);
         return true;
+    }
+
+    private void acharContato(){
+      System.out.println("---------Achar Contatos----------");
+      System.out.println("Digite o que se pede");
+      System.out.print("Nome: ");
+      String nome = scan.nextLine();
+      System.out.print("Sobrenome: ");
+      String sobrenome = scan.nextLine();
+      Contato contatoachado = agenda.findContatos(nome, sobrenome);
+      System.out.println(contatoachado);
+    }
+
+    private void adicionarTelefone(){
+      System.out.println("---------Adicionar Telefone----------");
+      System.out.println("Digite o que se pede");
+      System.out.print("Rotulo: ");
+      String rotulo = scan.nextLine();
+      System.out.print("Valor: ");
+      String valor = scan.nextLine();
+      System.out.print("Indice: ");
+      int indice = scan.nextInt();
+      scan.nextLine();
+      boolean status = agenda.addTelefone(rotulo, valor, indice);
+      System.out.println(status);
     }
 
     public static void main(String[] args) {

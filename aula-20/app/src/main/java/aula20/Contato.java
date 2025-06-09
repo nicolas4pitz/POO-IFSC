@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public class Contato {
 
     private String nome;
-
     private String sobrenome;
     private LocalDate dataNasc;
     private ColecaoTelefone telefones = new ColecaoTelefone();
@@ -24,7 +23,27 @@ public class Contato {
     }
 
     public String toString(){
-        return "nome: " + nome + " sobrenome: " + sobrenome + " DataNascimento: " + dataNasc + "Telefone: " + telefones.toString();
+        return "Nome: " + nome + "; Sobrenome: " + sobrenome + "; DataNascimento: " + dataNasc + "; Telefone: " + telefones.toString();
+    }
+
+    public String getNome() {
+      return nome;
+    }
+
+    public String getSobrenome() {
+      return sobrenome;
+    }
+
+    public LocalDate getDataNasc() {
+      return dataNasc;
+    }
+
+    public ColecaoTelefone getTelefones() {
+      return telefones;
+    }
+
+    public ColecaoEmail getEmails() {
+      return emails;
     }
 
 }
