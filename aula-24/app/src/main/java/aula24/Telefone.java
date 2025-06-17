@@ -1,4 +1,4 @@
-package main.java.aula24;
+package aula24;
 
 public class Telefone {
 
@@ -8,16 +8,16 @@ public class Telefone {
     private double peso;
     private Dimensao dim;
 
-    public Telefone(int codigo, String numSerie, String modelo, double peso, Dimensao dim) {
+    public Telefone(int codigo, String numSerie) {
         this.codigo = codigo;
         this.numSerie = numSerie;
-        this.modelo = modelo;
-        this.peso = peso;
-        this.dim = dim;
     }
 
-    public String imprimirDados(){
-        return "Codigo " + this.codigo + dim.toString();
+    public String toString(){
+        return "Codigo " + this.codigo + " Numero de Serie " +this.numSerie;
     }
 
+    public String getNumSerie() {
+        return numSerie;
+    }
 }

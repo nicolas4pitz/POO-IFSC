@@ -18,7 +18,7 @@ classDiagram
     
 
     class Main{
-
+        - entretenimentos : ~Entretenimento~
     }
 
     class Entretenimento{

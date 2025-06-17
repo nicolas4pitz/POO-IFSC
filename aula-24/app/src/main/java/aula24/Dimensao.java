@@ -1,4 +1,4 @@
-package main.java.aula24;
+package aula24;
 
 public class Dimensao {
 

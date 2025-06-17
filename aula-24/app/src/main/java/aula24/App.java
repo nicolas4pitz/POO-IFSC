@@ -3,16 +3,42 @@
  */
 package aula24;
 
-import main.java.aula24.Dimensao;
-import main.java.aula24.Semfio;
+import aula24.Dimensao;
+import aula24.Semfio;
+
+import java.util.ArrayList;
 
 public class App {
     
 
     public static void main(String[] args) {
-        Dimensao dim = new Dimensao();
-        Semfio semfio = new Semfio(0, "222", "Nokia", 200, dim, 2.4, 4, 6);
 
-        System.out.println(semfio.imprimirDados());
+        ArrayList<Telefone> produtos = new ArrayList<>();
+
+        Telefone t = new Telefone(1, "abc");
+        Semfio sf = new Semfio(2, "sf", 2.4);
+
+        produtos.add(t);
+        produtos.add(sf);
+
+        for (Telefone elemento : produtos){
+
+
+            //Java > 21
+            if (elemento instanceof Semfio b){
+                ((Semfio) elemento).getFrequencia();
+
+                System.out.println(b);
+
+            }
+
+            // Java < 21
+            if(elemento instanceof Semfio){
+                ((Semfio) elemento).getFrequencia();
+
+                Semfio b = (Semfio) elemento;
+                System.out.println(b);
+            }
+        }
     }
 }

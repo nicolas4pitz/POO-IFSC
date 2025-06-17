@@ -1,4 +1,4 @@
-package main.java.aula24;
+package aula24;
 
 public class Celular extends Semfio {
 
@@ -6,7 +6,7 @@ public class Celular extends Semfio {
 
     public Celular(int codigo, String numSerie, String modelo, double peso, Dimensao dim, double frequencia, int canais,
             double distancia, String sistemaOperacional) {
-        super(codigo, numSerie, modelo, peso, dim, frequencia, canais, distancia);
+        super(codigo, numSerie, frequencia);
         this.sistemaOperacional = sistemaOperacional;
     }
 

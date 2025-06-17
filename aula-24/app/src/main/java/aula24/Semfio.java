@@ -1,4 +1,4 @@
-package main.java.aula24;
+package aula24;
 
 public class Semfio extends Telefone{
 
@@ -6,19 +6,19 @@ public class Semfio extends Telefone{
     private int canais;
     private double distancia;
     
-    public Semfio(int codigo, String numSerie, String modelo, double peso, Dimensao dim, double frequencia, int canais,
-            double distancia) {
-        super(codigo, numSerie, modelo, peso, dim);
+    public Semfio(int codigo, String numSerie, double frequencia) {
+        super(codigo, numSerie);
         this.frequencia = frequencia;
-        this.canais = canais;
-        this.distancia = distancia;
     }
 
 
     @Override
-    public String imprimirDados() {
+    public String toString() {
         // TODO Auto-generated method stub
-        return super.imprimirDados() + "Freq: " + this.frequencia;
+        return super.toString() + " Freq: " + this.frequencia;
     }
 
+    public double getFrequencia() {
+        return frequencia;
+    }
 }
