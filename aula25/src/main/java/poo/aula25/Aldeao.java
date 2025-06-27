@@ -1,6 +1,6 @@
 package poo.aula25;
 
-public class Aldeao extends Personagem{
+public class Aldeao extends Personagem implements Coletador, Guerreiro{
 
 
     public Aldeao() {
@@ -9,11 +9,21 @@ public class Aldeao extends Personagem{
 
     @Override
     public String atacar() {
-        return "O Aldeao " + super.atacar();
+        return "O Aldeao está atacando, dando "+this.ataque;
     }
 
     @Override
     public String mover() {
-        return "O Aldeao " + super.mover();
+        return "O Aldeao está se movendo com velocidade " + this.velocidade;
+    }
+
+    @Override
+    public String coletarOuro() {
+        return "O Aldeao está coletando ouro";
+    }
+
+    @Override
+    public String coletarMadeira() {
+        return "O Aldeao está coletando madeira";
     }
 }

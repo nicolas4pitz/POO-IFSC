@@ -1,9 +1,9 @@
 package poo.aula25;
 
-public class Personagem {
-    private int vida;
-    private int ataque;
-    private double velocidade;
+public abstract class Personagem {
+    protected int vida;
+    protected int ataque;
+    protected double velocidade;
 
     public Personagem(double velocidade, int ataque, int vida) {
         this.velocidade = velocidade;
@@ -11,11 +11,7 @@ public class Personagem {
         this.vida = vida;
     }
 
-    public String atacar(){
-        return String.format("está atacando o inimigo, dando %d de dano", this.ataque);
-    }
+    public abstract String atacar();
 
-    public String mover(){
-        return String.format("está movendo com velocidade %d", this.velocidade);
-    }
+    public abstract String mover();
 }
