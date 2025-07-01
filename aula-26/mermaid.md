@@ -6,92 +6,76 @@ classDiagram
 
     direction LR
 
-    Animal <|-- Mamifero
-    Animal <|-- Ave
-    Animal <|-- Peixe
-
     class Animal{
+        <<Abstract>>
         - nome : String
     }
 
+    Animal <|-- Urso
+    Animal <|-- Felino
+    Animal <|-- Canino
+
+    class Urso {
+        <<Abstract>>
+        - corDapelagem : String
+        - olfatoAgucado : boolean
+    }
+
+    Urso <|-- Urso_Panda
     
     class Felino {
+        <<Abstract>>
         - visaoNoturna : boolean
         - garrasRetraidas : boolean
         + usarVisaoNoturna() : boolean
         + usarGarras() : boolean
     }
 
+    Felino <|-- Lince
+
     class Mamifero{
+        <<interface>>
         - produzirLeite() : boolean
-        - Pelos : boolean
-    }
-    
-    <<Abstract>> Mamifero
-    <<Abstract>> Animal
-    <<Abstract>> Ave
-    <<interface>> Felino
-    <<Abstract>> Peixe
-    Mamifero <|-- Felino
-    
-
-    class Gato{
-        + miar() : boolean
+        - paraDeProduzirLeite() : boolean
     }
 
-    Felino <|-- Gato
+    class Carnivoro{
+        <<interface>>
+        + comerCarne() : void
+        + perseguicao() : void
+    }
+
+    Lince --|> Carnivoro
+
+    class Onivoro{
+        <<interface>>
+        + comerOvos() : void
+    }
+    
+    Onivoro <|-- Urso_Panda
+
+    class Urso_Panda{
+        - pelagemListrada : boolean
+    }
+
+    Urso_Panda --|> Carnivoro
+
+    class Lince{
+        + cacaFurtiva() : boolean
+    }
 
     class Canino{
-        - latir() : boolean
+        <<Abstract>>
+        - latir() : String
         - correr() : boolean
     }
-
-    <<interface>> Canino
-
-    Mamifero <|-- Canino 
-
-    class Cachorro{
-        - domesticado : boolean
+    
+    class RaposaDoCampo{
+        - corDaPelagem : String
+        + cacaEmGrupo() : boolean
     }
 
-    Canino <|.. Cachorro
+    RaposaDoCampo --|> Canino
+    RaposaDoCampo --|> Mamifero
 
-    class Ave{
-        - pelos : boolean
-        - dentes : boolean
-        + voar() : boolean
-    }
-
-    class Hominideo{
-        - pensar() : String
-    }
-
-    temSiringe <|.. Hominideo
-    Animal <|-- temSiringe
-
-    class temSiringe{
-        falar() : String
-    }
-
-    <<interface>> temSiringe
-
-    temSiringe <|.. Arara
-
-    class Arara{
-        
-    }
-
-    Ave <|-- Arara
-
-    class Peixe{
-        + respiracaoBranquial() : boolean 
-        - tamanhodasguelras : int
-    }
-
-    Peixe <|-- Tubarao
-
-    class Tubarao{
-        + AtaqueRapido() : void
-        + Avançar() : void
-    }
 ```
