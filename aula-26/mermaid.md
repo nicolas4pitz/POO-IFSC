@@ -35,30 +35,30 @@ classDiagram
 
     class Mamifero{
         <<interface>>
-        - produzirLeite() : boolean
-        - paraDeProduzirLeite() : boolean
+        - produzirLeite() boolean
+        - paraDeProduzirLeite() boolean
     }
 
     class Carnivoro{
         <<interface>>
-        + comerCarne() : void
-        + perseguicao() : void
+        + comerCarne() void
+        + perseguicao() void
     }
 
-    Lince --|> Carnivoro
+    Lince ..|> Carnivoro
 
     class Onivoro{
         <<interface>>
-        + comerOvos() : void
+        + comerOvos() void
     }
     
-    Onivoro <|-- Urso_Panda
+    Onivoro <|.. Urso_Panda
 
     class Urso_Panda{
         - pelagemListrada : boolean
     }
 
-    Urso_Panda --|> Carnivoro
+    Urso_Panda ..|> Carnivoro
 
     class Lince{
         + cacaFurtiva() : boolean
@@ -76,6 +76,6 @@ classDiagram
     }
 
     RaposaDoCampo --|> Canino
-    RaposaDoCampo --|> Mamifero
+    RaposaDoCampo ..|> Mamifero
 
 ```
